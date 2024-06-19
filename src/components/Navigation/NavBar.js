@@ -1,32 +1,37 @@
-import React from "react";
-import { NavWrapper, NavButton, NavContent, NavItem, NavLogo, NavMenu, NavMenuButton, } from "./NavElements";
+import React, { useEffect, useState } from "react";
+import { NavWrapper, NavContent, NavLinks, NavLogo, NavMenu, MobIcon} from "./NavElements";
 import Logo from '../../imagens/Logo.png';
-
 import {FaBars} from "react-icons/fa";
-const NavBar = () => {
+const NavBar = ({setMenuIsVisible}) => {
+/*const [sticky, setSticky] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => {
+       window.pageYOffset > 50 ? setSticky(true) : setSticky(false);
+    }
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll)
+    })*/
     return(
         <>
             <NavWrapper>
-                <NavContent>
-                    <NavLogo src={Logo}/>
+                <NavContent >
+                    <NavLogo id='#Home' src={Logo}/>
+                    <MobIcon  onClick={() => setMenuIsVisible(true)}><FaBars/></MobIcon>
                         <NavMenu>
-                            <NavItem>
+                            <NavLinks href="#Home">
                                 HOME
-                            </NavItem>
-                            <NavItem>
-                                CONTATOS
-                            </NavItem>
-                            <NavItem>
-                                PROJETOS
-                            </NavItem>
-                            <NavItem>
-                                SKILLS
-                            </NavItem>
-                            <NavButton onClick={() => {}}>
-                                CLIQUE AQUI!
-                            </NavButton>
+                            </NavLinks>
+                            <NavLinks href='#Skills'>
+                                 Skills
+                            </NavLinks>
+                            <NavLinks href='#Projects'>
+                                 Projects
+                            </NavLinks>
+                            <NavLinks href='#Contacts'>
+                                 Contacts
+                            </NavLinks>
                         </NavMenu>
-                        <NavMenuButton onClick={()=>{}}><FaBars/></NavMenuButton>
                     </NavContent>
                 </NavWrapper>
         </>

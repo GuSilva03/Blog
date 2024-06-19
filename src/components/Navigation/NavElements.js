@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export const NavWrapper = styled.div`
     background: rgba(0,0,0, 0.1);
-    padding:0.5rem 0;
-    position: sticky;
+    padding:0.4rem 0;
+    
     top: 0;
-    z-index: 30;
+    z-index: 5 !important;
     backdrop-filter: blur(50px);
     @media screen and (max-width: 1325px){
-        padding: 0 2rem
+        padding: 0 2rem;
     }
+    
 `
 export const NavLogo = styled.img`
     width: 12rem;
@@ -38,11 +39,11 @@ export const NavMenu = styled.ul`
         display: block;
     }
 `
-export const NavItem = styled.li`
-    margin: 0 1.5rem;
+export const NavLinks = styled.a`
+    margin: 0 2rem;
     text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: #fff;
+    font-size: 1.5rem;
+    color: #fff;
     position: relative;
     cursor: pointer;
     &::before{
@@ -67,14 +68,14 @@ export const NavItem = styled.li`
     }
 `
 export const NavButton = styled.button`
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 1.2rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     background: linear-gradient(90deg, #a993fe 0%, #7e61e7 100%);
-    padding: 0.6rem 2rem;
+    padding: 0.6rem 3rem;
     border: none;
     outline: 1.5px solid transparent;
     border-radius: 0.2rem;
@@ -89,7 +90,7 @@ export const NavButton = styled.button`
         display: none;
     }
 `
-export const NavMenuButton = styled.nav`
+export const MobIcon = styled.nav`
     font-size: 1.8rem;
     width: 2.5rem;
     height: 2.5rem;
@@ -111,4 +112,11 @@ export const NavMenuButton = styled.nav`
     @media screen and (max-width: 769px){
         display: block;
     }
+`
+export const NavMenuButton = styled.button`
+    font-size: 1.1rem;
+`
+export const Men = styled.div`
+    background-color: white;
+    width: 30px;
 `
